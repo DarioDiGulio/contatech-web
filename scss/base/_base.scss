@@ -1,0 +1,51 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+
+} 
+
+html{
+    font-size: 20px;
+    font-family: $texto-gerenal;
+}
+
+
+h1 {
+    color:$color-blanco;
+    font-family: $texto-titulos;
+    font-weight: 700;
+    font-style: italic;
+    font-size: $fuente-grande;
+    line-height: $espaciado-chico;
+}
+
+h2 {
+    color: $color-texto;
+    font-family: $texto-titulos;
+    font-weight: 700;
+    font-style: italic;
+    font-size: $fuente-mediana;
+    line-height: $espaciado-chico;
+}
+
+
+h3 {
+    color: $color-texto;
+    font-family:$texto-gerenal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: $espaciado-estandar;
+}
+
+p {
+    color: $color-texto;
+    font-family:$texto-gerenal;
+    font-size: $fuente-chica;
+    line-height: $espaciado-estandar;
+}
+

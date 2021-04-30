@@ -1,0 +1,13 @@
+{
+  "name": "ContaTech - Sass",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "live-server",
+    "sass-watch": "sass --watch scss:css",
+    "sass": "sass scss:css"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "sass": "^1.29.0"
+  }
+}

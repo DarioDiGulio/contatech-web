@@ -1,0 +1,93 @@
+
+header {
+    height: 85vh;
+    width: 100%;
+
+    .hero-top {
+        background-color: $color-negro;
+        text-align: center;
+        height: 5%;
+        @include flex-center;
+   
+        a {
+            color: $color-blanco;
+            text-align: center;
+            font-family: $texto-gerenal;
+            font-size: 0.75rem;
+            line-height: 0.5em;
+        }
+
+        span {
+            color: $color-enfasis;
+        }
+
+    }
+
+    .hero {
+        background-color: $color-bg;
+        @include flex-center;
+        height: 85vh;
+        a {
+            color: $color-blanco;
+        }
+
+        .hero_texto {
+            background-image: url("/images/fondo.png");
+            background-size: cover;
+
+            height: 100%;
+            width: 70%;
+            padding-left: 5em;
+
+            @include flex-center;
+                align-items: flex-start;
+                flex-flow: column;
+
+            h1 {
+                max-width:600px;
+            }
+
+            .cta {
+                background-color: $color-principal;
+                padding: .2em 2.3em;
+                box-shadow: .3em .3em $color-secundario;
+            }
+        }
+
+        .hero_nav {
+            height: 100%;
+            width: 30%;
+
+            @include flex-center;
+                flex-flow: column;
+                     
+            li {
+                margin: 1.2em 0;
+                position: relative;
+
+                &::before{
+                    z-index: 999;
+                    content: "";
+                    position: absolute;
+                        left: 1%;
+                        right: 100%;
+                        bottom: -50%;
+                    background: $color-principal;
+                    height: 5px;
+                    transition: right ease-out .4s;
+                }
+
+                &:hover:before, 
+                &:focus:before, 
+                &:active:before {
+                    right: 0;
+                }
+
+                &:hover:after {
+                    width: 100%;
+                }
+            }            
+        }
+    }
+}
+

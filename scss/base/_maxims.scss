@@ -1,0 +1,15 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+// @mixin grid {
+//     display: grid;
+//     grid-template-columns: ;
+//     grid-template-rows: ;
+//     grid-template-areas: ;
+//     grid-column-gap: ;
+//     grid-column-gap: ;
+// } 
