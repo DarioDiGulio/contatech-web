@@ -47,17 +47,20 @@ footer {
             width: 70%;
             padding-left: 5em;
 
+            #border-form {
+                background: linear-gradient(180deg, #40C0F0 0%, #8DBF22 100%);
+            }
+
             .form {
                 @include flex-center;
                 flex-direction: column;
-
+                background: linear-gradient(180deg, #40C0F0 0%, #8DBF22 100%);
                 background-color: $color-gris;
                 border-radius: 1.5em;
                 width: 50%;
                 height: 70%;
                 margin: 0;
                 text-align: center;
-
                 h3 {
                     color: $color-texto;
                     font-family: $texto-titulos;

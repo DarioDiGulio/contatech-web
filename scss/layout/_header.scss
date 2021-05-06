@@ -26,7 +26,7 @@ header {
     .hero {
         background-color: $color-bg;
         @include flex-center;
-        height: 85vh;
+        height: 80vh;
         a {
             color: $color-blanco;
         }
@@ -37,11 +37,11 @@ header {
 
             height: 100%;
             width: 70%;
-            padding-left: 5em;
+            padding: 0 15%;
 
             @include flex-center;
-                align-items: flex-start;
-                flex-flow: column;
+            align-items: flex-start;
+            flex-flow: column;
 
             h1 {
                 max-width:600px;
@@ -91,3 +91,49 @@ header {
     }
 }
 
+
+// Media querys
+
+@media only screen and (max-width: $tablet) {
+    h1 {
+        font-size: $fuente-mediana !important;
+    }   
+}
+
+@media only screen and (max-width: $mobile) {
+    h1 {
+        // font-size: $fuente-chica !important;
+    }   
+}
+
+@media only screen and (max-width: 650px) {
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero_texto {
+        width: 100% !important;
+    }
+
+    .hero_nav {
+
+        width: 100% !important;
+        height: 10% !important;
+
+        ul {
+            width: 100% !important;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero_texto {
+        padding: 0 5% !important;
+    }
+}

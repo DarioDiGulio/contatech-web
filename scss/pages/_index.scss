@@ -1,116 +1,127 @@
 .presentacion {
-    margin: 5em;
-    display: grid;
+  margin: 5em;
+  display: grid;
 
-    h2 {
-        text-align: center;
-        &.main-heading {
-            text-decoration: underline $color-enfasis;
-        }
+  h2 {
+    text-align: center;
+    &.main-heading {
+      text-decoration: underline $color-enfasis;
     }
+  }
 
-    p {
-        text-align: justify;
-        width: 70%;
-    }
+  p {
+    text-align: justify;
+    width: 70%;
+  }
 
-    .persona {
-        @include flex-center;
-        margin: 2em;
-        height: 400px;
-    }
+  .persona {
+    @include flex-center;
+    margin: 2em;
+    height: 400px;
+  }
 
-    .reverse {
-        flex-direction: row-reverse;
-    }
+  .reverse {
+    flex-direction: row-reverse;
+  }
 
-    .img {
-        width: 30%;
-        height: 100%;
-        border-radius: 1em;
-        margin: 1em .5em;
-    }
+  .img {
+    width: 30%;
+    height: 100%;
+    border-radius: 1em;
+    margin: 1em 0.5em;
+  }
 
-    #juan {
-        background: url("/images/foto1.jpg") no-repeat center;
-        background-size: cover;
-        box-shadow: -.5em -.5em $color-enfasis;
-    }
+  #juan {
+    background: url("/images/foto1.jpg") no-repeat center;
+    background-size: cover;
+    box-shadow: -0.5em -0.5em $color-enfasis;
+  }
 
-    #caro {
-        background: url("/images/foto2.jpg") no-repeat center;
-        background-size: cover;
-        box-shadow: .5em .5em $color-secundario;
-    }
+  #caro {
+    background: url("/images/foto2.jpg") no-repeat center;
+    background-size: cover;
+    box-shadow: 0.5em 0.5em $color-secundario;
+  }
 
-    #daro {
-        background: url("/images/foto1.jpg") no-repeat center;
-        background-size: cover;
-        box-shadow: -.5em -.5em $color-enfasis;
-    }
+  #daro {
+    background: url("/images/foto1.jpg") no-repeat center;
+    background-size: cover;
+    box-shadow: -0.5em -0.5em $color-enfasis;
+  }
 
+  .parrafos {
+    margin: 0 3em;
+    width: 70%;
+  }
 
-    .parrafos {
-        margin: 0 3em;
-        width: 70%;
-    }
-
-    .parrafos p {
-        width: 100%;
-    }
+  .parrafos p {
+    width: 100%;
+  }
 }
 
 .que-ofrecemos {
-    background-color: $color-bg;
-    width: 100%;
+  background-color: $color-bg;
+  width: 100%;
+  height: 65vh;
 
-    h2 {
-        color: $color-blanco;
-        text-align: center;
-        padding: 1em;
+  h2 {
+    color: $color-blanco;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  h3 {
+    color: $color-blanco;
+    text-align: center;
+    width: 63%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .iconos-flex {
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+
+    article {
+      @include flex-center;
+      flex-direction: column;
+      text-align: center;
+
+      img {
+        margin: 1em;
+        width: 40%;
+      }
     }
 
-    h3 {
-        color: $color-blanco;
-        text-align: center;
-        width: 63%;
-        font-size: 1rem;
-        line-height: 1.5rem;
+    article.align {
+      align-self: flex-start;
     }
-
-    .iconos-flex {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-items: stretch;
-        align-items: center;
-        /*width: 80%;*/
-        padding-bottom: 2em;
-
-        article {
-            @include flex-center;
-            flex-direction: column;
-            text-align: center;
-
-            img {
-                margin: 1em;
-                width: 40%;
-            }
-        }
-    }
+  }
 }
 
 .ultimos-videos {
-    height: 28em;
+  height: 28em;
 
-    h2 {
-        text-align: center;
-        padding: 1em;
-    }
+  h2 {
+    text-align: center;
+    padding: 1em;
+  }
 }
 
 .row {
-    &.margin {
-        margin: 80px;
-    }
+  &.margin {
+    margin: 80px;
+  }
 }
+
+.separator {
+  height: 8px;
+  background-color: $color-principal;
+  border: none;
+}
+
+// Media querys
+
