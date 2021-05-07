@@ -1,5 +1,5 @@
 .presentacion {
-  margin: 5em;
+  margin: 10%;
   display: grid;
 
   h2 {
@@ -25,15 +25,12 @@
   }
 
   .img {
-    width: 30%;
     height: 100%;
     border-radius: 1em;
     margin: 1em 0.5em;
   }
 
   #juan {
-    background: url("/images/foto1.jpg") no-repeat center;
-    background-size: cover;
     box-shadow: -0.5em -0.5em $color-enfasis;
   }
 
@@ -44,8 +41,6 @@
   }
 
   #daro {
-    background: url("/images/foto1.jpg") no-repeat center;
-    background-size: cover;
     box-shadow: -0.5em -0.5em $color-enfasis;
   }
 
@@ -125,3 +120,47 @@
 
 // Media querys
 
+@media only screen and (max-width: 460px) {
+  h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .presentacion .persona {
+    flex-direction: column;
+  }
+
+  .persona {
+    display: block !important;
+  }
+
+  .presentacion .img {
+    display: block;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .presentacion .parrafos {
+    margin: auto;
+  }
+
+  .que-ofrecemos {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: $small-mobile) {
+  .que-ofrecemos .iconos-flex{
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+  @media only screen and (max-width: 440px) {
+  .presentacion {
+    margin: auto;
+  }
+}
