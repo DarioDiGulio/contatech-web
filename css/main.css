@@ -76,6 +76,34 @@ header .hero {
 header .hero a {
   color: #ffffff;
 }
+header .hero .hero__menu {
+  width: 25px;
+  cursor: pointer;
+  color: #8DBF22;
+  position: relative;
+  top: -70%;
+  left: 90%;
+  display: none;
+}
+header .hero .hero_nav--mobile > ul {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  background-color: #0E1920;
+}
+header .hero .hero_nav--mobile > ul {
+  display: none;
+}
+header .hero .hero_nav--mobile > ul.show {
+  animation: expand-menu 500ms 0s 1;
+}
+header .hero .hero_nav--mobile > ul.hidden {
+  animation: hidden-menu 500ms 0s;
+}
 header .hero .hero_texto {
   background-image: url("/images/fondo.png");
   background-size: cover;
@@ -83,8 +111,10 @@ header .hero .hero_texto {
   width: 70%;
   padding: 0 15%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
+  align-items: flex-start;
+  flex-flow: column;
 }
 header .hero .hero_texto h1 {
   max-width: 600px;
@@ -138,14 +168,12 @@ header .hero .hero_nav li:hover:after {
     width: 100% !important;
   }
 
-  .hero_nav {
-    width: 100% !important;
-    height: 10% !important;
+  .hero__menu {
+    display: block;
   }
-  .hero_nav ul {
-    width: 100% !important;
-    display: flex;
-    justify-content: space-around;
+
+  header .hero .hero_nav.--desktop {
+    display: none;
   }
 }
 @media only screen and (max-width: 370px) {
@@ -155,6 +183,21 @@ header .hero .hero_nav li:hover:after {
 
   .hero_texto {
     padding: 0 5% !important;
+  }
+}
+@keyframes expand-menu {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 10%;
+    display: block;
+  }
+}
+@keyframes hidden-menu {
+  100% {
+    height: 0;
+    display: none;
   }
 }
 footer {
@@ -192,7 +235,7 @@ footer .footer-main .footer_redes .redes ul {
   justify-content: space-around;
 }
 footer .footer-main .footer_form {
-  background: url("../images/fondo.png") no-repeat right;
+  background: url("../../images/fondo.png") no-repeat right;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -297,7 +340,7 @@ footer .footer-bottom p {
 
 @media only screen and (max-width: 800px) {
   footer .footer-bottom {
-    height: 41%;
+    height: 61%;
   }
 
   .footer-bottom .row {
@@ -389,7 +432,7 @@ footer .footer-bottom p {
 .que-ofrecemos {
   background-color: #0E1920;
   width: 100%;
-  height: 65vh;
+  height: 80vh;
 }
 .que-ofrecemos h2 {
   color: #ffffff;

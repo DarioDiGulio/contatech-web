@@ -31,6 +31,38 @@ header {
             color: $color-blanco;
         }
 
+        .hero__menu {
+            width: 25px;
+            cursor: pointer;
+            color: $color-enfasis;
+            position: relative;
+            top: -70%;
+            left: 90%;
+            display: none;
+        }
+
+        .hero_nav--mobile > ul {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            font-size: .8rem;
+            position: absolute;
+            top: 8%;
+            right: 5%;
+            background-color: $color-bg;
+        }
+
+        .hero_nav--mobile > ul {
+            display: none;
+            &.show {
+                animation: expand-menu 500ms 0s 1;
+            }
+
+            &.hidden {
+                animation: hidden-menu 500ms 0s;
+            }
+        }
+
         .hero_texto {
             background-image: url("/images/fondo.png");
             background-size: cover;
@@ -109,15 +141,13 @@ header {
         width: 100% !important;
     }
 
-    .hero_nav {
+    .hero__menu {
+        display: block;
+    }
 
-        width: 100% !important;
-        height: 10% !important;
-
-        ul {
-            width: 100% !important;
-            display: flex;
-            justify-content: space-around;
+    header .hero .hero_nav {
+        &.--desktop {
+            display: none;
         }
     }
 }
@@ -129,5 +159,23 @@ header {
     
     .hero_texto {
         padding: 0 5% !important;
+    }
+}
+
+@keyframes expand-menu {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 10%;
+        display: block;
+    }
+}
+
+@keyframes hidden-menu {
+    100% {
+        height: 0;
+        display: none;
     }
 }
