@@ -80,9 +80,10 @@ header .hero .hero__menu {
   width: 25px;
   cursor: pointer;
   color: #8DBF22;
-  position: relative;
-  top: -70%;
-  left: 90%;
+  position: fixed;
+  top: 5vh;
+  left: 5vw;
+  z-index: 1;
   display: none;
 }
 header .hero .hero_nav--mobile > ul {
@@ -90,19 +91,17 @@ header .hero .hero_nav--mobile > ul {
   flex-direction: column;
   padding: 5px;
   font-size: 0.8rem;
-  position: absolute;
-  top: 8%;
-  right: 5%;
+  position: fixed;
+  top: 9vh;
+  left: 5vw;
+  z-index: 1;
   background-color: #0E1920;
 }
-header .hero .hero_nav--mobile > ul {
+header .hero .hero_nav--mobile {
   display: none;
 }
-header .hero .hero_nav--mobile > ul.show {
-  animation: expand-menu 500ms 0s 1;
-}
-header .hero .hero_nav--mobile > ul.hidden {
-  animation: hidden-menu 500ms 0s;
+header .hero .hero_nav--mobile ul li {
+  padding: 5px;
 }
 header .hero .hero_texto {
   background-image: url("/images/fondo.png");
@@ -168,8 +167,8 @@ header .hero .hero_nav li:hover:after {
     width: 100% !important;
   }
 
-  .hero__menu {
-    display: block;
+  #hamb-menu {
+    display: inline;
   }
 
   header .hero .hero_nav.--desktop {
@@ -183,21 +182,6 @@ header .hero .hero_nav li:hover:after {
 
   .hero_texto {
     padding: 0 5% !important;
-  }
-}
-@keyframes expand-menu {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 10%;
-    display: block;
-  }
-}
-@keyframes hidden-menu {
-  100% {
-    height: 0;
-    display: none;
   }
 }
 footer {
@@ -340,7 +324,7 @@ footer .footer-bottom p {
 
 @media only screen and (max-width: 800px) {
   footer .footer-bottom {
-    height: 61%;
+    height: 41%;
   }
 
   .footer-bottom .row {

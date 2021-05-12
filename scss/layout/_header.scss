@@ -1,181 +1,165 @@
 
 header {
-    height: 85vh;
-    width: 100%;
+  height: 85vh;
+  width: 100%;
 
-    .hero-top {
-        background-color: $color-negro;
-        text-align: center;
-        height: 5%;
-        @include flex-center;
-   
-        a {
-            color: $color-blanco;
-            text-align: center;
-            font-family: $texto-gerenal;
-            font-size: 0.75rem;
-            line-height: 0.5em;
-        }
+  .hero-top {
+    background-color: $color-negro;
+    text-align: center;
+    height: 5%;
+    @include flex-center;
 
-        span {
-            color: $color-enfasis;
-        }
-
+    a {
+      color: $color-blanco;
+      text-align: center;
+      font-family: $texto-gerenal;
+      font-size: 0.75rem;
+      line-height: 0.5em;
     }
 
-    .hero {
-        background-color: $color-bg;
-        @include flex-center;
-        height: 80vh;
-        a {
-            color: $color-blanco;
-        }
-
-        .hero__menu {
-            width: 25px;
-            cursor: pointer;
-            color: $color-enfasis;
-            position: relative;
-            top: -70%;
-            left: 90%;
-            display: none;
-        }
-
-        .hero_nav--mobile > ul {
-            display: flex;
-            flex-direction: column;
-            padding: 5px;
-            font-size: .8rem;
-            position: absolute;
-            top: 8%;
-            right: 5%;
-            background-color: $color-bg;
-        }
-
-        .hero_nav--mobile > ul {
-            display: none;
-            &.show {
-                animation: expand-menu 500ms 0s 1;
-            }
-
-            &.hidden {
-                animation: hidden-menu 500ms 0s;
-            }
-        }
-
-        .hero_texto {
-            background-image: url("/images/fondo.png");
-            background-size: cover;
-
-            height: 100%;
-            width: 70%;
-            padding: 0 15%;
-
-            @include flex-center;
-            align-items: flex-start;
-            flex-flow: column;
-
-            h1 {
-                max-width:600px;
-            }
-
-            .cta {
-                background-color: $color-principal;
-                padding: .2em 2.3em;
-                box-shadow: .3em .3em $color-secundario;
-            }
-        }
-
-        .hero_nav {
-            height: 100%;
-            width: 30%;
-
-            @include flex-center;
-                flex-flow: column;
-                     
-            li {
-                margin: 1.2em 0;
-                position: relative;
-
-                &::before{
-                    z-index: 999;
-                    content: "";
-                    position: absolute;
-                        left: 1%;
-                        right: 100%;
-                        bottom: -50%;
-                    background: $color-principal;
-                    height: 5px;
-                    transition: right ease-out .4s;
-                }
-
-                &:hover:before, 
-                &:focus:before, 
-                &:active:before {
-                    right: 0;
-                }
-
-                &:hover:after {
-                    width: 100%;
-                }
-            }            
-        }
+    span {
+      color: $color-enfasis;
     }
+
+  }
+
+  .hero {
+    background-color: $color-bg;
+    @include flex-center;
+    height: 80vh;
+
+    a {
+      color: $color-blanco;
+    }
+
+    .hero__menu {
+      width: 25px;
+      cursor: pointer;
+      color: $color-enfasis;
+      position: fixed;
+      top: 5vh;
+      left: 5vw;
+      z-index: 1;
+      display: none;
+    }
+
+    .hero_nav--mobile > ul {
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+      font-size: .8rem;
+      position: fixed;
+      top: 9vh;
+      left: 5vw;
+      z-index: 1;
+      background-color: $color-bg;
+    }
+
+    .hero_nav--mobile {
+      display: none;
+    }
+
+    .hero_nav--mobile {
+      & ul li {
+        padding: 5px;
+      }
+    }
+
+    .hero_texto {
+      background-image: url("/images/fondo.png");
+      background-size: cover;
+
+      height: 100%;
+      width: 70%;
+      padding: 0 15%;
+
+      @include flex-center;
+      align-items: flex-start;
+      flex-flow: column;
+
+      h1 {
+        max-width: 600px;
+      }
+
+      .cta {
+        background-color: $color-principal;
+        padding: .2em 2.3em;
+        box-shadow: .3em .3em $color-secundario;
+      }
+    }
+
+    .hero_nav {
+      height: 100%;
+      width: 30%;
+
+      @include flex-center;
+      flex-flow: column;
+
+      li {
+        margin: 1.2em 0;
+        position: relative;
+
+        &::before {
+          z-index: 999;
+          content: "";
+          position: absolute;
+          left: 1%;
+          right: 100%;
+          bottom: -50%;
+          background: $color-principal;
+          height: 5px;
+          transition: right ease-out .4s;
+        }
+
+        &:hover:before,
+        &:focus:before,
+        &:active:before {
+          right: 0;
+        }
+
+        &:hover:after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 
 // Media query's
 
 @media only screen and (max-width: $tablet) {
-    h1 {
-        font-size: $fuente-mediana !important;
-    }   
+  h1 {
+    font-size: $fuente-mediana !important;
+  }
 }
 
-@media only screen and (max-width: 650px) {
-    .hero {
-        flex-direction: column;
-    }
-    
-    .hero_texto {
-        width: 100% !important;
-    }
+@media only screen and (max-width: $small-mobile) {
+  .hero {
+    flex-direction: column;
+  }
 
-    .hero__menu {
-        display: block;
-    }
+  .hero_texto {
+    width: 100% !important;
+  }
 
-    header .hero .hero_nav {
-        &.--desktop {
-            display: none;
-        }
+  #hamb-menu {
+    display: inline;
+  }
+
+  header .hero .hero_nav {
+    &.--desktop {
+      display: none;
     }
+  }
 }
 
 @media only screen and (max-width: 370px) {
-    .hero {
-        flex-direction: column;
-    }
-    
-    .hero_texto {
-        padding: 0 5% !important;
-    }
-}
+  .hero {
+    flex-direction: column;
+  }
 
-@keyframes expand-menu {
-    0% {
-        height: 0;
-    }
-
-    100% {
-        height: 10%;
-        display: block;
-    }
-}
-
-@keyframes hidden-menu {
-    100% {
-        height: 0;
-        display: none;
-    }
+  .hero_texto {
+    padding: 0 5% !important;
+  }
 }

@@ -1,12 +1,13 @@
 document.getElementById('hamb-menu').addEventListener('click', () => {
     const nav = document.getElementsByClassName('hero_nav--mobile')[0];
-    const menu = nav.firstElementChild;
 
-    if (menu.classList.contains('show')) {
-        menu.classList.remove('show');
-        menu.classList.add('hidden');
+    if (nav.classList.contains('show')) {
+        nav.classList.remove('show');
+        nav.classList.add('hidden');
+        nav.style.display = 'none';
     } else {
-        menu.classList.remove('hidden');
-        menu.classList.add('show');
+        nav.classList.remove('hidden');
+        nav.classList.add('show');
+        nav.style.display = 'block';
     }
 })
